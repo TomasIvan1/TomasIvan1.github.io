@@ -1,14 +1,220 @@
 <!DOCTYPE html>
-<html>
+<html lang="sk">
+
 <head>
-    <title>Môj Web</title>
     <meta charset="UTF-8">
-    <style>
-        body { font-family: sans-serif; text-align: center; margin-top: 50px; }
-        h1 { color: #333; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tomáš Ivan | Portfolio</title>
+    <!-- Google Fonts: Outfit (Headings) and Inter (Body), Syne for extreme modern look -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;600&family=Inter:wght@300;400;500;600&family=Outfit:wght@200;300;400;500;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css?v=3">
+
+    <!-- Meta descriptions for SEO -->
+    <meta name="description"
+        content="Osobné portfólio Tomáša Ivana. Študent Informačných a sieťových technológií, SPŠE Prešov.">
 </head>
+
 <body>
-    <h1>Riaditelska zo sieti neni ready na mna</h1>
+    <!-- Texture Overlay for organic feel -->
+    <div class="texture-overlay"></div>
+
+    <!-- Subtle Navigation -->
+    <nav class="site-nav">
+        <!-- Desktop Links -->
+        <ul class="nav-links desktop-links">
+            <li><a href="#about">O mne</a></li>
+            <li><a href="#projects">Projekty</a></li>
+            <li><a href="#skills">Skúsenosti</a></li>
+        </ul>
+
+        <!-- Hamburger Icon for Mobile -->
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Mobile Slide-In Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="close-menu" id="close-menu">
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-menu-content">
+            <a href="#about" class="mobile-link">O mne</a>
+            <a href="#projects" class="mobile-link">Projekty</a>
+            <a href="#skills" class="mobile-link">Skúsenosti</a>
+            <div class="mobile-socials">
+                <a href="https://www.linkedin.com/in/tom%C3%A1%C5%A1-ivan-slovakia" target="_blank"
+                    class="social-icon"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+                <a href="https://github.com/TomasIvan1" target="_blank" class="social-icon"><img
+                        src="assets/icons/github.svg" alt="GitHub"></a>
+                <a href="https://www.instagram.com/t_0_m_a_s_12/" target="_blank" class="social-icon"><img
+                        src="assets/icons/instagram.svg" alt="Instagram"></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <!-- The AI generated background will be placed here in CSS -->
+        <div class="hero-background"></div>
+        <!-- Canvas for particle light flow -->
+        <canvas id="flowCanvas"></canvas>
+        <div class="hero-content">
+            <p class="hero-handwritten">Tomáš Ivan — Študent & Vývojár</p>
+            <h1 class="hero-title">
+                <span id="typewriter" class="type-text">Vyvíjam</span><span class="typewriter-cursor">|</span> <br>
+                <span class="highlight-text">
+                    inovatívne riešenia.
+                    <svg class="hand-underline" viewBox="0 0 100 20" preserveAspectRatio="none">
+                        <path d="M0,10 Q50,20 100,5" fill="none" stroke="var(--light-coral)" stroke-width="3"
+                            stroke-linecap="round" />
+                    </svg>
+                </span>
+            </h1>
+        </div>
+        <!-- Organic Shape Divider to break the straight line -->
+        <div class="hero-shape-divider">
+            <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                preserveAspectRatio="none">
+                <path
+                    d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                    class="shape-fill"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Content Flow -->
+    <main>
+        <!-- About Section -->
+        <section id="about" class="section about-section">
+            <div class="section-content">
+                <h2 class="section-title">Technológia ako organický ekosystém.</h2>
+                <div class="accent-line accent-rose"></div>
+                <p class="text-block">Mám 18 rokov a som študentom informačných a sieťových technológií na SPŠE v
+                    Prešove. Verím, že
+                    technológie by nemali byť len chladným kódom, ale živými systémami. Fascinuje ma vývoj softvéru,
+                    voľný tok dát a zabezpečovanie stability a bezpečnosti digitálnych prepojení.</p>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section projects-section">
+            <div class="section-divider-top">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Vybrané Projekty</h2>
+                    <div class="accent-line accent-coral"></div>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Project Card 1 -->
+                    <article class="project-card">
+                        <div class="card-strip strip-teal"></div>
+                        <div class="card-body">
+                            <div class="project-icon">
+                                <img src="assets/icons/network.svg" alt="Sieťová topológia" />
+                            </div>
+                            <h3 class="project-title">Návrh Sieťovej Topológie</h3>
+                            <p class="project-desc">Simulácia a architektonický návrh bezpečnej podnikovej siete.
+                                Detailné plánovanie smerovania a prepínania s ohľadom na vysokú dostupnosť.</p>
+                        </div>
+                    </article>
+
+                    <!-- Project Card 2 -->
+                    <article class="project-card">
+                        <div class="card-strip strip-bronze"></div>
+                        <div class="card-body">
+                            <div class="project-icon">
+                                <img src="assets/icons/code.svg" alt="Vývoj" />
+                            </div>
+                            <h3 class="project-title">Algoritmické Modely</h3>
+                            <p class="project-desc">Skripty na automatizáciu a optimalizáciu dátových tokov. Plynulá
+                                integrácia s existujúcimi systémami.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+            <div class="section-divider-bottom">
+                <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
+                    preserveAspectRatio="none">
+                    <path
+                        d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                        class="shape-fill"></path>
+                </svg>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section skills-section">
+            <div class="section-content">
+                <div class="section-header">
+                    <h2 class="section-title">Skúsenosti & Zručnosti</h2>
+                    <div class="accent-line accent-teal"></div>
+                </div>
+
+                <div class="skills-grid">
+                    <div class="skill-item">
+                        <div class="skill-icon wrap-bronze">
+                            <img src="assets/icons/code.svg" alt="Vývoj" />
+                        </div>
+                        <h4>Vývoj Softvéru</h4>
+                        <p class="skill-tags">React, Python, Docker</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon wrap-teal">
+                            <img src="assets/icons/cloud.svg" alt="Cloud" />
+                        </div>
+                        <h4>Cloudové Technológie</h4>
+                        <p class="skill-tags">Architektúra, Manažment</p>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-icon wrap-rose">
+                            <img src="assets/icons/server.svg" alt="Nasadzovanie" />
+                        </div>
+                        <h4>Nasadzovanie Softvéru</h4>
+                        <p class="skill-tags">CI/CD, Integrácia</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/tomáš-ivan-slovakia" target="_blank" aria-label="LinkedIn"
+                    class="social-icon">
+                    <img src="assets/icons/linkedin.svg" alt="LinkedIn">
+                </a>
+                <a href="https://github.com/TomasIvan1" target="_blank" aria-label="GitHub" class="social-icon">
+                    <img src="assets/icons/github.svg" alt="GitHub">
+                </a>
+                <a href="https://www.instagram.com/t_0_m_a_s_12/" target="_blank" aria-label="Instagram"
+                    class="social-icon">
+                    <img src="assets/icons/instagram.svg" alt="Instagram">
+                </a>
+            </div>
+            <p class="footer-claim">Navrhnuté s precíznosťou pre jedinečnosť</p>
+        </div>
+    </footer>
+
+    <!-- Logic -->
+    <script src="js/app.js?v=3"></script>
 </body>
+
 </html>
