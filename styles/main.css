@@ -57,6 +57,23 @@
     }
 }
 
+/* Scroll Reveal Classes */
+.reveal {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+
 /* Base Restets */
 * {
     margin: 0;
@@ -79,6 +96,16 @@ body {
     overflow-x: hidden;
     /* Fixes horizontal scrollbar / white bar on mobile */
     min-height: 100vh;
+}
+
+::selection {
+    background-color: var(--cotton-rose);
+    color: #2D2D2D;
+}
+
+::-moz-selection {
+    background-color: var(--cotton-rose);
+    color: #2D2D2D;
 }
 
 /* Subtle texture matching paper/fabric feeling */
@@ -104,7 +131,8 @@ body {
     padding: 1.5rem var(--spacing-lg);
     z-index: 1000;
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
+    align-items: center;
     /* Liquid glass standard - totally transparent at top */
     background: transparent;
     transition: all 0.4s ease;
@@ -119,6 +147,28 @@ body {
     -webkit-backdrop-filter: blur(15px);
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
     padding: 1rem var(--spacing-lg);
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+}
+
+.nav-brand-text {
+    font-family: var(--font-handwriting);
+    font-size: 1.8rem;
+    color: var(--honey-bronze);
+    text-decoration: none;
+    transition: var(--transition-smooth);
+    opacity: 0.9;
+    transform: rotate(-2deg);
+    display: inline-block;
+}
+
+.nav-brand-text:hover {
+    color: var(--light-coral);
+    transform: rotate(0deg) scale(1.05);
+    opacity: 1;
 }
 
 .nav-links {
@@ -296,6 +346,7 @@ body {
     width: 100%;
     overflow: hidden;
     line-height: 0;
+    z-index: 3;
 }
 
 .hero-shape-divider svg {
@@ -307,7 +358,7 @@ body {
 }
 
 .hero-shape-divider .shape-fill {
-    fill: var(--linen);
+    fill: #FFFFFF;
 }
 
 .section-divider-top {
@@ -385,6 +436,11 @@ body {
 }
 
 /* About Section Refinement */
+.about-section {
+    background-color: #FFFFFF;
+    padding-bottom: calc(var(--spacing-xl) + 6rem);
+}
+
 .about-section .section-content {
     display: flex;
     flex-direction: column;
@@ -411,6 +467,117 @@ body {
     font-size: clamp(1.1rem, 2vw, 1.4rem);
     color: #444;
     line-height: 1.8;
+}
+
+/* Education Timeline Revamp */
+.education-section .section-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: var(--spacing-md) auto 0;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Base vertical line */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: 0;
+    height: 100%;
+    width: 2px;
+    background: rgba(45, 45, 45, 0.1);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: var(--spacing-md);
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+@keyframes pulseDot {
+    0% { box-shadow: 0 0 0 0 rgba(242, 132, 130, 0.6); }
+    70% { box-shadow: 0 0 0 10px rgba(242, 132, 130, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(242, 132, 130, 0); }
+}
+
+/* Floating dot on the line */
+.timeline-dot {
+    position: absolute;
+    left: -35px;
+    top: 6px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--honey-bronze);
+    border: 2px solid var(--linen);
+    box-shadow: 0 0 0 4px rgba(246, 189, 96, 0.2);
+    transition: var(--transition-smooth);
+}
+
+.timeline-item:hover .timeline-dot {
+    background-color: var(--light-coral);
+    transform: scale(1.2);
+    animation: pulseDot 1.5s infinite;
+}
+
+.timeline-date {
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--muted-teal);
+    letter-spacing: 0.05em;
+    margin-bottom: 0.25rem;
+    display: inline-block;
+    background: rgba(132, 165, 157, 0.1);
+    padding: 2px 10px;
+    border-radius: 12px;
+}
+
+.timeline-content {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02);
+    transition: var(--transition-smooth);
+}
+
+.timeline-item:hover .timeline-content {
+    transform: translateX(10px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
+}
+
+.timeline-content h3 {
+    font-family: var(--font-heading);
+    font-size: 1.4rem;
+    font-weight: 500;
+    color: #2D2D2D;
+    margin-bottom: 0.2rem;
+}
+
+.timeline-content h4 {
+    font-family: var(--font-body);
+    font-size: 1rem;
+    font-weight: 400;
+    color: #666;
+    margin-bottom: 0.8rem;
+}
+
+.timeline-content p {
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    color: #555;
+    line-height: 1.6;
 }
 
 /* Projects Cards */
@@ -450,6 +617,11 @@ body {
     left: 0;
     bottom: 0;
     width: 4px;
+    transition: var(--transition-smooth);
+}
+
+.project-card:hover .card-strip {
+    width: 8px;
 }
 
 .strip-teal {
@@ -470,6 +642,13 @@ body {
     height: 32px;
     margin-bottom: var(--spacing-sm);
     opacity: 0.8;
+    transition: var(--transition-smooth);
+    transform-origin: center;
+}
+
+.project-card:hover .project-icon {
+    transform: rotate(10deg) scale(1.15);
+    opacity: 1;
 }
 
 .project-title {
@@ -527,25 +706,42 @@ body {
     justify-content: center;
     border-radius: 10px;
     background: var(--linen);
+    transition: var(--transition-smooth);
 }
 
 .skill-icon img {
     width: 30px;
     height: 30px;
     opacity: 0.8;
+    transition: var(--transition-smooth);
 }
 
 /* Custom coloring for icons */
 .wrap-teal {
     background-color: rgba(132, 165, 157, 0.15);
 }
+.skill-item:hover .wrap-teal {
+    background-color: var(--muted-teal);
+}
 
 .wrap-bronze {
     background-color: rgba(246, 189, 96, 0.15);
 }
+.skill-item:hover .wrap-bronze {
+    background-color: var(--honey-bronze);
+}
 
 .wrap-rose {
     background-color: rgba(242, 132, 130, 0.15);
+}
+.skill-item:hover .wrap-rose {
+    background-color: var(--cotton-rose);
+}
+
+.skill-item:hover .skill-icon img {
+    filter: brightness(0) invert(1);
+    opacity: 1;
+    transform: scale(1.1);
 }
 
 .skill-item h4 {
@@ -761,7 +957,7 @@ body {
 /* Responsive Rules */
 @media (max-width: 768px) {
     :root {
-        --spacing-lg: 3rem;
+        --spacing-lg: 1.5rem;
         --spacing-xl: 5rem;
     }
 

@@ -159,22 +159,20 @@ function initCanvasParticles() {
 }
 
 function initScrollRevels() {
-    const sections = document.querySelectorAll('.section');
+    const reveals = document.querySelectorAll('.reveal');
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
+                entry.target.classList.add('active');
+                // Optionally stop observing once revealed
+                observer.unobserve(entry.target);
             }
         });
-    }, { threshold: 0.1 });
+    }, { threshold: 0.1, rootMargin: "0px 0px -50px 0px" });
 
-    sections.forEach(section => {
-        section.style.opacity = '0';
-        section.style.transform = 'translateY(30px)';
-        section.style.transition = 'all 0.8s cubic-bezier(0.16, 1, 0.3, 1)';
-        observer.observe(section);
+    reveals.forEach((reveal, index) => {
+        observer.observe(reveal);
     });
 }
 
