@@ -965,9 +965,17 @@ body {
     justify-content: center;
     gap: 0.8rem;
     font-size: 2.2rem;
-    transform: none;
     margin-top: 1.5rem;
 }
+
+.mobile-menu.open .mobile-link:nth-child(4) {
+    transition-delay: 0.4s;
+}
+
+.mobile-menu.open .mobile-link:nth-child(5) {
+    transition-delay: 0.5s;
+}
+
 
 .mobile-socials {
     display: flex;
