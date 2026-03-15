@@ -171,6 +171,25 @@ body {
     opacity: 1;
 }
 
+.lang-toggle-btn {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 1.2rem;
+    transform: none;
+    margin-left: 1rem;
+}
+
+.globe-icon {
+    display: block;
+    opacity: 0.9;
+    transition: var(--transition-smooth);
+}
+
+.lang-toggle-btn:hover .globe-icon {
+    transform: rotate(15deg);
+}
+
 .nav-links {
     display: flex;
     gap: var(--spacing-md);
@@ -938,6 +957,16 @@ body {
 
 .mobile-menu.open .mobile-link:nth-child(3) {
     transition-delay: 0.3s;
+}
+
+.lang-toggle-mobile-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-size: 2.2rem;
+    transform: none;
+    margin-top: 1.5rem;
 }
 
 .mobile-socials {
